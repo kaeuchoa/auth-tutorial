@@ -8,6 +8,7 @@ import { PublicQuotesComponent } from './components/public-quotes/public-quotes.
 import { PrivateQuotesComponent } from './components/private-quotes/private-quotes.component';
 import { CallbackComponent } from './components/callback.component';
 import { QuoteService } from './services/quote.service';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { QuoteService } from './services/quote.service';
         HttpClientModule
     ],
     providers: [
-        QuoteService
+        QuoteService,
+        AuthService
     ],
     bootstrap: [AppComponent]
 })
