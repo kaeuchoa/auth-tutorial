@@ -1,6 +1,6 @@
 .header {
     border-bottom: 1px solid #c2c2c2;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     &__filter {
         display: flex;
         align-items: flex-end;
@@ -10,16 +10,17 @@
 }
 
 .quote-card {
-    height: 100px;
+    height: auto;
     display: flex;
     box-shadow: 0 0 10px #00000026;
     position: relative;
-    margin: 30px 0;
+    &:not(:first-of-type) {
+        margin: 50px 0;
+    }
     .quote-msg,
     .quote-info {
         display: flex;
-        padding: 20px;
-        height: 100%;
+        padding: 40px;
         align-items: center;
     }
     
