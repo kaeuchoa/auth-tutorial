@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CallbackComponent } from './components/callback.component';
 import { PrivateQuotesComponent } from './components/private-quotes/private-quotes.component';
 import { PublicQuotesComponent } from './components/public-quotes/public-quotes.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
     {
@@ -16,7 +17,10 @@ const routes: Routes = [
     },
     {
         path: 'special',
-        component: PrivateQuotesComponent
+        component: PrivateQuotesComponent,
+        canActivate: [
+            AuthGuard
+        ]
     },
     {
         path: 'callback',
