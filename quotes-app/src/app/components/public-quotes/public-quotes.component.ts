@@ -23,12 +23,12 @@ export class PublicQuotesComponent implements OnInit, OnDestroy {
     ) { }
 
     ngOnInit(): void {
-        // this.quotesSub = this.quoteService
-        //     .getPublicQuotes()
-        //     .subscribe(
-        //         quotes => this.publicQuotes = quotes,
-        //         err => this.error = err
-        //     );
+        this.quotesSub = this.quoteService
+            .getPublicQuotes()
+            .subscribe(
+                quotes => this.publicQuotes = quotes,
+                err => this.error = err
+            );
     }
 
     ngOnDestroy() {

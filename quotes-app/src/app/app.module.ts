@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PublicQuotesComponent } from './components/public-quotes/public-quotes.component';
 import { PrivateQuotesComponent } from './components/private-quotes/private-quotes.component';
 import { CallbackComponent } from './components/callback.component';
+import { QuoteService } from './services/quote.service';
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { CallbackComponent } from './components/callback.component';
         AppRoutingModule,
         HttpClientModule
     ],
-    providers: [],
+    providers: [
+        QuoteService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

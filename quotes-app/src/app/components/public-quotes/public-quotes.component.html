@@ -11,25 +11,17 @@
     </div>
 </header>
 <main class="row">
-    <ul class="col">
-        <li class="quote-card">
+    <ul class="col-12">
+        <li class="quote-card" *ngFor="let quote of publicQuotes">
             <div class="quote-msg">
-                <span class="quote-msg__greeting">Ei, pessoa de x anos. </span>
-                <span class="quote-msg__body">Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</span>
+                <span>
+                    <span class="quote-msg__greeting">Ei, pessoa de {{quote.toAge}} anos. </span>
+                    {{quote.body}}
+                </span>
             </div>
             <div class="quote-info">
-                <span class="quote-info__author-age"><i>icon</i>00</span>
-                <span class="quote-info__up-votes"><i>icon</i>00</span>
-            </div>
-        </li>
-        <li class="quote-card">
-            <div class="quote-msg">
-                <span class="quote-msg__greeting">Ei, pessoa de x anos. </span>
-                <span class="quote-msg__body">Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</span>
-            </div>
-            <div class="quote-info">
-                <span class="quote-info__author-age"><i>icon</i>00</span>
-                <span class="quote-info__up-votes"><i>icon</i>00</span>
+                <span class="quote-info__author-age"><i>icon</i>{{quote.user.age}}</span>
+                <span class="quote-info__up-votes"><i>icon</i>{{quote.upVotes}}</span>
             </div>
         </li>
     </ul>
