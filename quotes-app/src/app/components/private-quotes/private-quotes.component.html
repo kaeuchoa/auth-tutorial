@@ -14,11 +14,11 @@
 </header>
 <main class="row">
     <div class="col-12" *ngIf="showForm">
-        <div class="quote-card quote-form">
+        <div class="quote-card quote-form" [formGroup]="quoteForm">
             <div class="quote-msg">
                     <span class="quote-msg__greeting">
                         Ei, pessoa de
-                        <select name="" id="" class="custom-select">
+                        <select formControlName="age" class="custom-select">
                             <option value="{{age}}" *ngFor="let age of ages">{{age}}</option>
                         </select>
                         anos.
@@ -27,11 +27,11 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Meu conselho é:</span>
                         </div>
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" formControlName="msgBody"></textarea>
                     </div>
             </div>
             <div class="quote-info">
-                <button class="btn btn-sm btn-outline-success">Salvar</button>
+                <button class="btn btn-sm btn-outline-success" [disabled]="!quoteForm.valid" (click)="submitQuote()">Salvar</button>
             </div>
         </div>
     </div>

@@ -9,6 +9,7 @@ import { PrivateQuotesComponent } from './components/private-quotes/private-quot
 import { CallbackComponent } from './components/callback.component';
 import { QuoteService } from './services/quote.service';
 import { AuthService } from './services/auth.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,11 +22,12 @@ import { AuthService } from './services/auth.service';
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+        ReactiveFormsModule
     ],
     providers: [
         QuoteService,
-        AuthService
+        AuthService,
     ],
     bootstrap: [AppComponent]
 })

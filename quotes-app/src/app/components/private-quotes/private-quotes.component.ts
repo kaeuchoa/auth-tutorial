@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { timeStamp } from 'console';
 import { Subscription } from 'rxjs';
 import { Quote } from 'src/app/models/quote';
 import { AuthService } from 'src/app/services/auth.service';
 import { QuoteService } from 'src/app/services/quote.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-private-quotes',
@@ -24,10 +24,16 @@ export class PrivateQuotesComponent implements OnInit, OnDestroy {
     hideFormTxt = 'Cancelar';
     btnText : string;
     
+    quoteForm = this.fb.group({
+        age: ['', Validators.required],
+        msgBody: ['', Validators.required]
+    });
+    
 
     constructor(
         public quoteService: QuoteService,
-        public authService: AuthService
+        public authService: AuthService,
+        public fb: FormBuilder
     ) { }
 
     ngOnInit(): void {
@@ -48,6 +54,10 @@ export class PrivateQuotesComponent implements OnInit, OnDestroy {
     toggleQuoteForm() {
         this.showForm = !this.showForm;
         this.btnText = this.showForm ? this.hideFormTxt : this.addQuoteTxt;
-        
+    }
+    
+    submitQuote() {
+        console.log(this.quoteForm.value);
+        // todo: use service to post this
     }
 }
