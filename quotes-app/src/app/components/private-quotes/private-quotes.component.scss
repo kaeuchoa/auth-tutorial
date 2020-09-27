@@ -1,0 +1,14 @@
+.quote-form {
+    margin-bottom: 40px;
+    
+    .quote-msg {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .quote-form-msg {
+        textarea {
+            resize: none;
+        }
+    }
+}

@@ -18,9 +18,9 @@ const routes: Routes = [
     {
         path: 'special',
         component: PrivateQuotesComponent,
-        canActivate: [
-            AuthGuard
-        ]
+        // canActivate: [
+        //     AuthGuard
+        // ]
     },
     {
         path: 'callback',
@@ -30,6 +30,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [AuthGuard]
 })
 export class AppRoutingModule { }

@@ -1,1 +1,52 @@
-<p>private-quotes works!</p>
+<header class="row header">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex align-items-center flex-column">
+                    <img src="https://via.placeholder.com/150" class="rounded" alt="...">
+                    <h1>{{title}}</h1>
+                    <p>{{subtitle}}</p>
+                    <button class="btn btn-success" (click)="toggleQuoteForm()" #addNewQuoteBtn>{{btnText}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="row">
+    <div class="col-12" *ngIf="showForm">
+        <div class="quote-card quote-form">
+            <div class="quote-msg">
+                    <span class="quote-msg__greeting">
+                        Ei, pessoa de
+                        <select name="" id="" class="custom-select">
+                            <option value="{{age}}" *ngFor="let age of ages">{{age}}</option>
+                        </select>
+                        anos.
+                    </span>
+                    <div class="input-group quote-form-msg">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Meu conselho é:</span>
+                        </div>
+                        <textarea class="form-control"></textarea>
+                    </div>
+            </div>
+            <div class="quote-info">
+                <button class="btn btn-sm btn-outline-success">Salvar</button>
+            </div>
+        </div>
+    </div>
+    <ul class="col-12">
+        <li class="quote-card" *ngFor="let quote of privateQuotes">
+            <div class="quote-msg">
+                <span>
+                    <span class="quote-msg__greeting">Ei, pessoa de {{quote.toAge}} anos. </span>
+                    {{quote.body}}
+                </span>
+            </div>
+            <div class="quote-info">
+                <span class="quote-info__author-age"><i>icon</i>{{quote.user.age}}</span>
+                <span class="quote-info__up-votes"><i>icon</i>{{quote.upVotes}}</span>
+            </div>
+        </li>
+    </ul>
+</main>

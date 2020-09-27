@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+.public-header {
+    border-bottom: 1px solid #c2c2c2;
+}
+
+.public-header,
+.header {
+    margin-bottom: 40px;
+    &__filter {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 20px 0;
+    }
+}
+
+.quote-card {
+    height: auto;
+    display: flex;
+    box-shadow: 0 0 10px #00000026;
+    position: relative;
+    &:not(:first-of-type) {
+        margin: 50px 0;
+    }
+    .quote-msg,
+    .quote-info {
+        display: flex;
+        padding: 40px;
+        align-items: center;
+    }
+    
+    .quote-msg {
+        flex-grow: 1;
+        &__greeting {
+            color: #959595;
+        }
+    }
+    
+    .quote-info {
+        display: flex;
+        background: #f8f8f8;
+        align-items: center;
+        justify-content: center;
+        
+        &__author-age,
+        &__up-votes {
+            min-width: 30px;
+            min-height: 30px;
+            padding: 10px;
+            text-align: center;
+            i {
+                margin-right: 5px;
+            }
+        }
+    }
+}
