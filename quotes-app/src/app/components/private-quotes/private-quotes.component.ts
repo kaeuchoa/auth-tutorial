@@ -14,7 +14,7 @@ export class PrivateQuotesComponent implements OnInit, OnDestroy {
 
     quotesSub: Subscription;
     privateQuotes: Quote[];
-    ages = Array(85 - 13 + 1).fill().map((_, idx) => 13 + idx);
+    ages = Array(85 - 13 + 1).fill(85).map((_, idx) => 13 + idx);
     error: any;
     showForm: boolean = false;
     title = 'Esse é o seu perfil';

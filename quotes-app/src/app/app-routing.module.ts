@@ -16,7 +16,7 @@ const routes: Routes = [
         component: PublicQuotesComponent
     },
     {
-        path: 'special',
+        path: 'profile',
         component: PrivateQuotesComponent,
         // canActivate: [
         //     AuthGuard
