@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../../services/auth.service';
+// import { AuthService } from '../../services/auth.service';
 import { Quote } from '../../models/quote';
 import { QuoteService } from '../../services/quote.service';
 
@@ -20,7 +20,6 @@ export class PublicQuotesComponent implements OnInit, OnDestroy {
 
     constructor(
         public quoteService: QuoteService,
-        public authService: AuthService
     ) { }
 
     ngOnInit(): void {

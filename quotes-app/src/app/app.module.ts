@@ -8,8 +8,9 @@ import { PublicQuotesComponent } from './components/public-quotes/public-quotes.
 import { PrivateQuotesComponent } from './components/private-quotes/private-quotes.component';
 import { CallbackComponent } from './components/callback.component';
 import { QuoteService } from './services/quote.service';
-import { AuthService } from './services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -23,11 +24,14 @@ import { ReactiveFormsModule } from '@angular/forms';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AuthModule.forRoot({
+            domain: environment.auth.domain,
+            clientId: environment.auth.clientID
+        }),
     ],
     providers: [
-        QuoteService,
-        AuthService,
+        QuoteService
     ],
     bootstrap: [AppComponent]
 })

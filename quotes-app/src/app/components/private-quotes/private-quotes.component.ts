@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Quote } from 'src/app/models/quote';
-import { AuthService } from 'src/app/services/auth.service';
+// import { AuthService } from 'src/app/services/auth.service';
 import { QuoteService } from 'src/app/services/quote.service';
 import { FormBuilder, Validators } from '@angular/forms';
 
@@ -32,8 +32,7 @@ export class PrivateQuotesComponent implements OnInit, OnDestroy {
 
     constructor(
         public quoteService: QuoteService,
-        public authService: AuthService,
-        public fb: FormBuilder
+        public fb: FormBuilder,
     ) { }
 
     ngOnInit(): void {

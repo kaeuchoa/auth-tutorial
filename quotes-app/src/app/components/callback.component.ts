@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-callback',
-  template: `
+    selector: 'app-callback',
+    template: `
     <p>
-      callback works!
+      carregando...
     </p>
   `,
-  styles: [
-  ]
+    styles: [
+    ]
 })
 export class CallbackComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+        
+    }
 
 }

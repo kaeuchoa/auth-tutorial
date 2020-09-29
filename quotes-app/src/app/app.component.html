@@ -2,16 +2,16 @@
     <nav>
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link active" href="#" routerLink="/quotes" routerLinkActive="active">Conselhos</a>
+                <a class="nav-link active" routerLink="/quotes" routerLinkActive="active">Conselhos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"  routerLink="/profile" routerLinkActive="active">Seus conselhos</a>
+                <a class="nav-link" routerLink="/profile" routerLinkActive="active">Seus conselhos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Entrar</a>
+                <a class="btn btn-link" (click)="authService.loginWithRedirect()">Entrar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Sair</a>
+                <a class="btn btn-link"  (click)="authService.logout()">Sair</a>
             </li>
         </ul>
     </nav>

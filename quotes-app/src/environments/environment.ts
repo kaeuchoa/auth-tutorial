@@ -8,7 +8,7 @@ export const environment = {
     clientID: 'ILJpJL1rFmy6XxqNyBiqCPu0iNWsY9IS',
     domain: 'https://kaeuchoa.us.auth0.com', // e.g., https://you.auth0.com/
     audience: 'http://localhost:3001', // e.g., http://localhost:3001
-    redirect: 'http://localhost:4200/callback',
+    redirectUri: window.location.origin,
     scope: 'openid profile email'
   }
 };
